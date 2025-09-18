@@ -32,24 +32,14 @@ COMMANDS FOR FILES
 * cat > filename.txt - to add contents to a file, then press( CTLR D) to exist the file
 * cat filename.txt - To View Contents of file
 * cp file1.txt file2.txt - To Copy the Copy / Change the Content in file2 - file1
-  
-CONSOLE BASED TEXT EDITOR
-*** VI EDITOR ***
-* vi filename - To open a file on VI EDITOR
-* press i - To enter the INSERT MODE (To modify file)
-* press esc - COMMAND MODE
-* press x - To delete a character
-* press dd - To delete entire line
-* press yy - To copy an entire line 
-* press p - To paste it
-* Press : - To switch from COMMAND MODE to LAST LINE MODE where you can type 
-* press :w filename - to save what you've written
-* Press :(number of line) - This helps to navigate to number of lines you wish to navigate to
-* press :q - to Quit(discard)
-* press :wq - To save Changes and Quit
-* press /finding_text - To find a particular text or word
-* press n - To move to all the found words
 
 **BASH ENVIRONMENT VARIABLE**
 * export VARIABLE_NAME = VALUE : This is for saving value inside the env
 * echo $VARIABLE_NAME = To print the value
+
+**How to find files**
+- locate file_name.extention
+- Grep text_to_find file_name.extention: This is used for searching or finding patern within files
+- grep -i text_to_find file_name.extention: This is used for searching or finding patern within without considering the CASE
+- grep -w text_to_find file_name.extention : This is used for search for the exact pattern 
+- grep -r "text_to_find" /directory : This is use to find / search for pattern in a particular dir
