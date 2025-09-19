@@ -1,7 +1,7 @@
 * To let our Application server / DB server only from a specific PORT and now where else. To do this:
   - Connect the Client to the Remote Server through SSH
   
-  - Then Filter Traffic on the Server. To do this, we will make use of IPtables. In Red Hat and CentOS systems it should be installed by default. However, on Ubuntu you may have to install it manually. To install IPtables run **sudo apt install iptables** to list the default rules configured in the system run **sudo iptables -L**
+  - Then Filter Traffic on the Server. To do this, we will make use of IPtables. In Red Hat and CentOS systems it should be installed by default. However, on Ubuntu you may have to install it manually. To install IPtables run **<sudo apt install iptables>** to list the default rules configured in the system run **<sudo iptables -L>**
     - By default are 3 types of rules or chains
     - 1. INPUT: This chain is applicable to the network traffic coming into the system (remote server). In this case, to allow SSH connection from the client laptop, we would need to add an input rule on the remote server e.g (EC2 instance) permitting SSH connections. *context: Who can send data to your server*
   
@@ -24,20 +24,20 @@
 NOTE: This rule so far would allow any client to connect with the Remote server, and to stop this. we do this:
 
 *INCOMING RULES TO DROP*
-- **iptables -A INPUT -p tcp --dport 22 -j DROP** : This is to drop traffic from any other source except from our source /client iptables
+- **<iptables -A INPUT -p tcp --dport 22 -j DROP>** : This is to drop traffic from any other source except from our source /client iptables
 
 
 *OUTGOING RULES TO ACCEPT*
-- <iptables -A OUTPUT -p tcp -d ip_address  --dport port -j ACCEPT>
-- <iptables -I OUTPUT -p tcp -d ip_address --dport port -j ACCEPT> : This add rules to the top in IPTABLE CAIN
+- **<iptables -A OUTPUT -p tcp -d ip_address  --dport port -j ACCEPT>**
+- **<iptables -I OUTPUT -p tcp -d ip_address --dport port -j ACCEPT>** : This add rules to the top in IPTABLE CAIN
   
 *OUTGOING RULES TO DROP*
- - <iptables -A OUTPUT -p tcp --dport port -j DROP>
+ - **<iptables -A OUTPUT -p tcp --dport port -j DROP>**
 
   
 NOTE- The IP address will be the Ip address of the HOST we want to connect to or make a request to
 * To Delete a Rule
-  - <iptables -D OUTPUT position_of_the_rule(num)>
+  - **<iptables -D OUTPUT position_of_the_rule(num)>**
 
 **BETTER Explanation on INPUT & OUTPUT CHAIN**
 
