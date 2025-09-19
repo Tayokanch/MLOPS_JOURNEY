@@ -6,7 +6,7 @@
 * File Bits
   - **r** : read. This has an Octal value of 4
   - **w** : write. This has an Octal value of 2
-  - **e** : execute. This has an Octal value of 1
+  - **x** : execute. This has an Octal value of 1
   - **-** : No permission . This an the Octal value of 0
 
 
