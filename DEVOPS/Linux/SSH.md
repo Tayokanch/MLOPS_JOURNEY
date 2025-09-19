@@ -26,7 +26,7 @@ first, create a key pair on the client, which is your laptop, using :
     * Then Copy the public key to the remote server. To do this, you will have to resort the password-based authentication at least once. An easy way to do this is to make use of the command called: - **ssh-copy-id user@IP** You will be asked to enter the password for your user on the remote server. After this, you should be able to access the remote server without entering a password.
   
      - **user**: This is the user you've created on the remote server
-     - **IP** : This is the address of the remote server e.g( public Ip address of an EC2
+     - **IP** : This is the address of the remote server e.g( public Ip address of an EC2)
 
 **SCP**
  - SCP allows us to copy files and directories within the file systems in Linux. SCP allows you to copy data over SSH. This means that you can copy files and directories betw your laptop and any other server tp which you have access
