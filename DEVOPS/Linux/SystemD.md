@@ -22,7 +22,7 @@
   - <**RestartSec=10**> : This derivative set the time in seconds to wait before the system attempts to restart the service.
 
 *TO ADD DEPENDENCY*
-- lets say we have a dependency i.e, a Mongodb Service that needs to start before before our application get start
+- lets say we have a dependency i.e, a Mongodb Service that needs to start before our application get started
 - We would need to an a <**Unit Derivative**> at the of the <**Service Derivative**>
   - <**[Unit]**> Under this:
   - <**After=Mongodb.service**>
