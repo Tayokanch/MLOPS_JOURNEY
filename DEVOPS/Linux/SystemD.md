@@ -12,12 +12,11 @@
   
 - <**systemctl stop project_name.service**> : This is to stop the service
   
-- To allow the service to be enable during boot, add another section to the service file called **Install Derivative**:
+- To allow the service to be enabled during boot, add another section to the service file called **Install Derivative**:
     - <**[Install]**>, Under this :
     - <**wantedBy graphical.target**>
   
-- Add the Service account to be used to start the service instead of root which is the default. To do this, add another Directive in between <**[Service]**> and
--  <**[Install]**>  which would be 
+- Then Add the Service account to be used to start the service instead of root which is the default. To do this, add another Directive in between <**[Service]**> and <**[Install]**>  which would be:  
   - <**User=Remote_username/ProjectName**>
   - <**Restart=on-failure**>: This tells the when to restart the service
   - <**RestartSec=10**> : This derivative set the time in seconds to wait before the system attempts to restart the service.
