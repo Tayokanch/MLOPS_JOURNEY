@@ -13,7 +13,7 @@
 
 *INCOMING RULES TO ACCEPT*
 
-- **iptables -A INPUT -p tcp -s ip_address --dport 22 -j ACCEPT**
+- **<iptables -A INPUT -p tcp -s ip_address --dport 22 -j ACCEPT>**
   
   - **-A** = Add Rule
   - **-p** = protocol which is the (tcp)
