@@ -1,0 +1,6 @@
+*THERE ARE 3 TYPES OF EXTERNAL STORAGE*
+1. DAS: Direct Attached Storage : This is attached directly to the host system  that requires the space. The host operating system sees a connected desk device as a blocked device. There is no networt or firewall between the storage and the host, which means  this provides excellence performance at a very affordable cost. DAS Network Attached Storage has a generally faster response than a NAS device where the data traffic goes over the network. The downside is that since DAS is directly attached, it is dedicated to a single server. As a result, this is not ideal for enterprise environments where multiple server need storsge and is more suitable for small businesses.
+
+2. NAS: Network Attached Storage, this is suitable for mid or large businesses. NAS is generally located apart from the hosts that will consume space from it. The data traffic btw the storage and the host is through the network. The physical distance btw the two may not be significant. They may be located in the same rack in a data center
+   
+3. SAN : Storage Area Network, This provides block storage used by enterprise for business-critical applications that need to deliver high throughput and low latency. Storage is allocated to host in the form of a LOgical Unit Number (LUN)

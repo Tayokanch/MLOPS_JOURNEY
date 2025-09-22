@@ -13,6 +13,8 @@
 
   - tar -zcf tarbox_name.tar.gz file_to_archive1 file_to_archive2 : This is use to COMPRESS the  to reduce the tarbox size
   
+  tar -xvzf filname.tar.gz -C /opt/ : to unzip
+  
 **Compressing Files**
 - bzip2 : 
   - bzip2 file_name.extention
