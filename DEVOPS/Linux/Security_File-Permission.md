@@ -5,9 +5,9 @@
   
 - Network Security : This is used to restrict or allow acccess to services listening to the Linux Server. In the case of Network Security, we commonly rely on externak firewalls to do this, it can also be set within the Linux systen by making use of tools such as IPTables and Firewalld.
   
-- SSH : Secure Shell, this is used for remote access to a server over an unsecured network. SSH hardening can help makse sure only the authorized users gain access to the server
+- **SSH** : Secure Shell, this is used for remote access to a server over an unsecured network. SSH hardening can help makse sure only the authorized users gain access to the server
   
--  SELinux : This makes use of security policies for isolationg applications running on the same system from each other to protect Linux Server
+-  **SELinux** : This makes use of security policies for isolationg applications running on the same system from each other to protect Linux Server
 -  
 
 
@@ -32,19 +32,19 @@
 
 
 **COMMANDS FOR USER DETAILS IN LINUX**
-- id: This gives information about the user e.g uid, gid, and user groups
-- who: This is to see the LIST of USER currently logged into the system
-- last: This displays the record of all logged-in users, it also shows the date and time when the system was rebooted.
+- <**id**>: This gives information about the user e.g uid, gid, and user groups
+- <**who**>: This is to see the LIST of USER currently logged into the system
+- <**last**>: This displays the record of all logged-in users, it also shows the date and time when the system was rebooted.
 
 **How to SWITCH USER in LINUX**
-- su -username : This is the command used in switching user in Linux, then followed by the password of the account you're switching to
-- sudo -u username : This is the Best practise of switching USERS as it doesnt rewuire password
+- <**su -username**> : This is the command used in switching user in Linux, then followed by the password of the account you're switching to
+- sudo -u username : This is the Best practise of switching USERS as it doesnt require password
   
 **SUDO**
 The deafault configuration for sudo is defined under /etc/sudoers file. This file defines the policies applied by the sudo command and can be updated using the  visudo command
-  - sudo visudo : This is the command we use to edit sudo file /etc/sudoers to and more users to ther sudo group
+  - <**sudo visudo**> : This is the command we use to edit sudo file /etc/sudoers to and more users to the sudo group
 
-- grep -i ^root /etc/passwd : This is used for setting no login shell. With a nologin shell set, no one can log into the systen using the root user and password directly.
+- <**grep -i ^root /etc/passwd**> : This is used for setting no login shell. With a nologin shell set, no one can log into the systen using the root user and password directly.
 
 
 

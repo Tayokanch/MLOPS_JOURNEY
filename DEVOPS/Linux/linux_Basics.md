@@ -40,6 +40,6 @@ COMMANDS FOR FILES
 **How to find files**
 - locate file_name.extention
 - Grep text_to_find file_name.extention: This is used for searching or finding patern within files
-- grep -i text_to_find file_name.extention: This is used for searching or finding patern within without considering the CASE
+- grep -i text_to_find file_name.extention: This is used for searching or finding patern  without considering the CASE
 - grep -w text_to_find file_name.extention : This is used for search for the exact pattern 
 - grep -r "text_to_find" /directory : This is use to find / search for pattern in a particular dir

@@ -14,18 +14,29 @@
 - Systems Colls and Security
   
 **Kernel Versions**
-- uname : This is used to display information about the KERNEL
-- uname -r : This is to get the version of the KERNEL
-- dmesg : This is used to display messages from an area of the kernel called the ring buffer.
-- udevadm info: This is used for query the udev database for device information
-- udevadm monitor - This is a command used in listening to the Kernel uevents.
-- lspci - It shows information about all PCI (Peripheral Component Interconnect) devices attached to your system. e.g Ethernet, Graphics card, USB Controller
-- lsblk- To list the block of disk
-- lscpu - : To display information about the cpu architecture.
-- lsmem --summary : This is use to check the available memory
-- runlevel : TYhis use to get the number which represent what kind of interface the linux is running on e.g 5-graphical interface, 3- CLI
-- systemctl get-default : To determine the current runlevel
-- systemctl set-default multi-user.target : This is to change form graphical.target to CLI (multi-user.target)
+- **uname**: This is used to display information about the KERNEL
+  
+- **uname -r** : This is to get the version of the KERNEL
+  
+- **dmesg** : This is used to display messages from an area of the kernel called the ring buffer.
+  
+- **udevadm info**: This is used for query the udev database for device information
+  
+- **udevadm monitor** - This is a command used in listening to the Kernel uevents.
+  
+- **lspci** - It shows information about all PCI (Peripheral Component Interconnect) devices attached to your system. e.g Ethernet, Graphics card, USB Controller
+  
+- **lsblk** - To list the block of disk
+  
+- **lscpu** - : To display information about the cpu architecture.
+  
+- **lsmem --summary**: This is use to check the available memory
+  
+- **runlevel** : This use to get the number which represent what kind of interface the linux is running on e.g 5-graphical interface, 3- CLI
+  
+- **systemctl get-default** : To determine the current runlevel
+  
+- **systemctl set-default multi-user.target**: This is to change form graphical.target to CLI (multi-user.target)
 
 **Linux Boot PROCESS**
 - BIOS POST - 
