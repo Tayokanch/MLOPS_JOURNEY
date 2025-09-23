@@ -36,15 +36,15 @@
 - Inside the <**/etc/httpd/conf/httpd.conf**> file, configure all the website you'd like to host. E.g
 - 1.
   *<VirtualHost *:80>
-    ServerName www.websit_url_on_DNS
-    DocumentRoot /var/frontend/Project1
+    ``ServerName www.websit_url_on_DNS``
+    ``DocumentRoot /var/frontend/Project1``
     </VirtualHost>*
 
 - 2.
-  *<VirtualHost *:80>
-    ServerName www.websit_url_on_DNS
-    DocumentRoot /var/frontend/Project2
-    </VirtualHost>*
+  <VirtualHost *:80>
+    ```ServerName www.websit_url_on_DNS```
+    ```DocumentRoot /var/frontend/Project2 ```  
+    </VirtualHost>
 
 *NOTE*
 - Instead of have all the configuation of all website we are hosting the <**/etc/httpd/conf/httpd.conf**>. The best approach is :
