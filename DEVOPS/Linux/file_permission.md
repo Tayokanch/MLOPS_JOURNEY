@@ -13,7 +13,7 @@
 **MODIFYING FILE PERMISSIONS**
 - chmod *permissions* file_name
   
-- **chomod u+rwx file_name** : This is modifying the permission of the user(u)
+- **chmod u+rwx file_name** : This is modifying the permission of the user(u)
   
 - **chmod ugo+r-x file_name** : This is modifying the permission of the user, group, and others (ugo)
   
