@@ -30,7 +30,7 @@
   - **chmod 750 file_name** : Provides full access for Owner, read and execute for group and no access for others.
 
 * HOW TO CHANGE OWNERSHIP OF GROUP
-  - **chown owner:group file**
+  - **chown -R owner:group file**
   - **chown bob:developer file_name** : Changes owner to "bob" and group-name to "developer"
   - **chown bob file_name** - Changes just the owner of the file to bob. Group-name unchanged.
   - **chgrp andriod file_name** : Changes the group for the file_name to the group called "andriod".
