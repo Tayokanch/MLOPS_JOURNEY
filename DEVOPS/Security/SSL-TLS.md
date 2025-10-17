@@ -67,7 +67,7 @@
 
 <**openssl rsa -in security_name.key -pubout> mybank.pem**> : Here we are extracting a Public key from the private key generated and redirecting/saving it to a file called **mybank.pem**
 
-<**openssl req -new -key security_name.key -out Security-name.csr -subj "/C=US/ST=CA/O=MyBank/CN=mybank.com"**>: Create a `Certificate Signing Request (CSR)`. The output would be Security-name.csr which is the file to send to the `CA`
+<**openssl req -new -key /etc/httpd/csr/security_name.key -out /etc/httpd/csr/Security_name.csr -subj "/C=US/ST=CA/O=MyBank/CN=mybank.com"**>: Create a `Certificate Signing Request (CSR)`. The output would be Security-name.csr which is the file to send to the `CA` to get our `Certificate`
 
 - <**You send my-bank.csr to a CA.**>: Send the `Certificate Signing Request file` to any `CA` of Choice 
 

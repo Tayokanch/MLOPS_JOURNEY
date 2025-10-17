@@ -21,27 +21,17 @@
 
 - 1. **<ssh-keygen -t rsa -b 2048 -f /home/.ssh/my_key_name>** : To create a key pair on the client
   
-- 2. <**chmod 700 ~/.ssh**>: give User permission To R-W-E to the /.ssh dir on the client 
+- 2. - <**ssh-copy-id -i  ~/.ssh/my_key_name.pub user_name@remote_server_name**> : Copy the public key to the remote server to configure a passwordless SSH connection between the client and host. Note: This automatically creates `.ssh/authorized_keys` file where the public key would be saved on the remote server 
+  
+- 3. <**ssh user_name@remote_server_name**>: SHH into the Remote Server
+  
+- 4. <**chown  -R User:Group /home/thor/.ssh/**> : Make the user the owner  of the `.ssh` dir and all files inside and its group
+  
+- 5. <**chmod 700 ~/.ssh**>: Give the remote user permission to Read, Write, Execute(cd) the .ssh dir
+  
+- 6. <**chmod 600 ~/.ssh/authorized_keys**>: Give the remote user permission to Read, Write, the file
 
-- 3. <**chmod 600 ~/.ssh/mykey**>: Give USER a Read/write Permission for the `private key` file on the client 
-  
-- 4. - <**ssh-copy-id -i  ~/.ssh/my_key_name.pub user_name@remote_server_name**> : Copy the public key to the remote server to configure a passwordless SSH connection between the client and host. Note: This automatically creates `.ssh/authorized_keys` file where the public key would be saved on the remote server 
-  
-- 5. <**ssh user_name@remote_server_name**>: SHH into the Remote Server
-  
-- 6. <**chown owner -R User:Group /home/thor/.ssh/my_key_name**> : Make the user the owner of the `private key` file and group
-  
-- 7. <**chmod 700 ~/.ssh**>: Give the remote user permission to Read, Write, Execute(cd) the .ssh dir
-  
-- 8. <**chmod 600 ~/.ssh/authorized_keys**>: Give the remote user permission to Read, Write, the file
-  
-  - <**chown username:username /home/thor/.ssh/directory_of_key**>: make this particular user the owner of the file and their name as the group
-  
-  - <**chmod 600 /home/thor/.ssh/  - <**chown username:username /home/thor/.ssh/directory_of_key**>: make this particular user the owner of the file and thier name as the group
-**> : Give user Read and Write Permission
-  
-     - **user**: This is the user you've created on the remote server
-     - **IP** : This is the address of the remote server e.g( public Ip address of an EC2)
+-7. <**ssh -i ~/.ssh/my_key_mame username@hostmae**> : This is to SSH into the remote server to use myKey private key whose public key is already known to  thor@app01
 
 **SCP**
  - SCP allows us to copy files and directories within the file systems in Linux. SCP allows you to copy data over SSH. This means that you can copy files and directories betw your laptop and any other server tp which you have access
