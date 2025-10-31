@@ -10,7 +10,7 @@
   
 - <**service/systemctl httpd restart**>: To restart Apache when changes has been made on the configuration
   
-- <**service/systemctl httpd staus**>: To to check the status
+- <**service/systemctl httpd status**>: To to check the status
   
 - <**firewall-cmd --permanent --add-service=http**>: This is to set firewall rule if we have on our system to allow HTTP TRAFFIC
   
@@ -21,7 +21,7 @@
 -  <**/etc/httpd/conf/httpd.conf**>: This  the configuration file. Inside this file we do the following:
 -  1. **Listen 80**: Write this line in the **/etc/httpd/conf/httpd.conf** to set the port which Apache is listening to
 - 
--  2. **DocumentRoot "/var/www/htm/**: Write this line in the **/etc/httpd/conf/httpd.conf** to defines the location where the static content is stored. e.g images and static files
+-  2. `DocumentRoot /var/www/html/`: Write this line in the **/etc/httpd/conf/httpd.conf** to defines the location where the static content is stored. e.g images and static files
   
 -  3. **sudo mv /opt/directory_of_files/* /var/www/html/** : To Move all the static file and Images to there /dir to **/var/www/html/** where Apache can see and have access to them
 
@@ -35,10 +35,11 @@
 *HOW TO HOST MULTIPLE WEBSITE INSIDE A SINGLE APACHE SERVER
 - Inside the <**/etc/httpd/conf/httpd.conf**> file, configure all the website you'd like to host. E.g
 - 1.
-  *<VirtualHost *:80>
+
+  <VirtualHost *:80>
     ``ServerName www.websit_url_on_DNS``
     ``DocumentRoot /var/frontend/Project1``
-    </VirtualHost>*
+  </VirtualHost>*
 
 - 2.
   <VirtualHost *:80>

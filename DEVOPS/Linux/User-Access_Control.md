@@ -23,7 +23,12 @@
 
 
 **USER MANAGEMENT IN LINUX**
-- useradd user_name : This used by the sysmtem admin or root user / a user with Sudo privileges to create a new local user in the system, such as the user for Bob
+- <**useradd user_name**>: This used by the sysmtem admin or root user / a user with Sudo privileges to create a new local user in the system, such as the user for Bob
+
+- <**sudo passwd user_name**>: To set password for the new User
+
+- <**su - user_name**>: To switch to the new user
+- <**sudo usermod -aG wheel user_name**>
 
 - passwd user_name : This command is used to set password for a user by an administrator
   

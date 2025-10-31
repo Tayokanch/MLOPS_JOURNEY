@@ -1,0 +1,1 @@
+#!/bin/bash - This means to run a script with bash 

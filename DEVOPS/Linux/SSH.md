@@ -20,7 +20,9 @@
 # How TO CREATED A PASSWORD_LESS SSH AND CONFIGURE A PASSWORDLESS SSH CONNECTION BTW CLIENT AND SERVER/HOST
 
 - 1. **<ssh-keygen -t rsa -b 2048 -f /home/.ssh/my_key_name>** : To create a key pair on the client
-  
+
+  - OR **<ssh-keygen -t ed25519 -C "your_email@example.com" -f /home/.ssh/my_key_name>**
+
 - 2. - <**ssh-copy-id -i  ~/.ssh/my_key_name.pub user_name@remote_server_name**> : Copy the public key to the remote server to configure a passwordless SSH connection between the client and host. Note: This automatically creates `.ssh/authorized_keys` file where the public key would be saved on the remote server 
   
 - 3. <**ssh user_name@remote_server_name**>: SHH into the Remote Server

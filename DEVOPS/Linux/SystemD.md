@@ -16,6 +16,8 @@
 - To allow the service to START AUTOMATICALLY after reboot, add another section to the service file called **Install Derivative**:
     - <**[Install]**>, Under this :
     - <**wantedBy graphical.target**>
+
+    
     - **<sudo systemctl daemon-reload >** : FOR SYSTEM TO DETECT THE CHANGES
     - <**sudo systemctl enable service_name**> 
   

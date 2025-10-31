@@ -2,8 +2,9 @@
   - Connect the Client to the Remote Server through SSH
   
   - Then Filter Traffic on the Server. To do this, we will make use of IPtables. In Red Hat and CentOS systems it should be installed by default. However, on Ubuntu you may have to install it manually. To install IPtables run **<sudo apt install iptables>** to list the default rules configured in the system run **<sudo iptables -L>**
+
     - By default are 3 types of rules or chains
-    - 1. INPUT: This chain is applicable to the network traffic coming into the system (remote server). In this case, to allow SSH connection from the client laptop, we would need to add an input rule on the remote server e.g (EC2 instance) permitting SSH connections. *context: Who can send data to your server*
+    - 1. I`NPUT`: This chain is applicable to the network traffic coming into the system (remote server). In this case, to allow SSH connection from the client laptop, we would need to add an input rule on the remote server e.g (EC2 instance) permitting SSH connections. *context: Who can send data to your server*
   
     - 2. OUTPUT - This chain is responsible for connections initiated by this server to other systems e.g when remote server initiates a connection to another server, such as a database server to query or write some data. *context: Where your remote server is allowed to send or request data*
   

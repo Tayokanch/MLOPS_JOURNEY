@@ -1,19 +1,14 @@
 -<**du -sh filename**> : This is used to determine the size of a file
 
 **Archiving Files**
--Tar : This is use for grouping multiple files or directories into a single file. Hence, its especially used for archiving data
+- *Tar* : This is use for grouping multiple files or directories into a single file. Hence, its especially used for archiving data
 
-  - <**tar -zcf output_filename.tar.gz file_to_archive1 file_to_archive2**> : This is use to ARCHIEVE & COMPRESS a file
   
-  - <**tar -xvzf filename.tar.gz -C /dir_to_save_it/**> : To UNARCHIEVE and DECOMPRESS a file and save it to a directory
+  - <**tar -czvf give_name.tar.gz -C /home/bob file1.txt file2.txt file3.txt**> : This how `Archive` and `Compress`files at once
   
-  - <**tar -czvf give_name.tar.gz -C /home/bob file1.txt file2.txt file3.txt**> : This how archive and compress files at once
-  
-  - <**tar -czvf caleston-code.tar.gz -C ~ folder_name**> : This will archieve the an entire folder and its content
+ - <**tar -xzvf screenshot.tar.gz**>: To `Extract` and `Decompress` files
 
-  - <**tar -tf home/file_name.tar**> : This is used to SEE / VIEW the contents of the tarbox
-  
-  - <**tar -xf filename.tar**> : This is use to EXTRACT the contents from the tarbox
+
 
   
 **Compressing Files**
