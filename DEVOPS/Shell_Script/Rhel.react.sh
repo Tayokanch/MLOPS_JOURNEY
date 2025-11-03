@@ -9,6 +9,22 @@ GIT_REPO="git@github.com:Tayokanch/VogueNest-client.git"
 INTERFACE="enp0s8"  # Host-only interface
 
 # ----------------------------------------
+# FUNCTION TO INSTALL PACKAGE IF THEY ARE NOT ALREADY INSTALLED
+# ----------------------------------------
+install_package_if_missiing() {
+    local PACKAGE=$1
+
+    # Check if package is installed
+    if ! rpm -q $PACKAGE &> /dev/null; then
+        echo "Package '$PACKAGE' is not installed. Installing..."
+        sudo dnf update -y
+        sudo dnf install -y $PACKAGE
+    else
+        echo "Package '$PACKAGE' is already installed."
+    fi
+}
+
+# ----------------------------------------
 # STEP 0: Detect Host-Only IP
 # ----------------------------------------
 HOSTONLY_IP=$(ip -4 addr show $INTERFACE | grep -oP '(?<=inet\s)\d+(\.\d+){3}')
@@ -18,12 +34,14 @@ echo "Detected Host-Only IP: $HOSTONLY_IP"
 # STEP 1: Update system and install dependencies
 # ----------------------------------------
 echo "Updating system and installing Apache, Git, Node.js..."
-sudo dnf update -y
-sudo dnf install -y httpd git curl
+
+install_package_if_missiing "httpd"
+install_package_if_missiing "git"
+install_package_if_missiing "curl"
 
 # Install Node.js LTS & npm
 curl -fsSL https://rpm.nodesource.com/setup_lts.x | sudo bash -
-sudo dnf install -y nodejs
+install_package_if_missiing "nodejs"
 
 # Enable and start Apache
 sudo systemctl enable httpd
@@ -93,6 +111,21 @@ fi
 if ! grep -q "^$HOSTONLY_IP.*$DOMAIN" /etc/hosts; then
     echo "$HOSTONLY_IP $DOMAIN" | sudo tee -a /etc/hosts
 fi
+
+
+# ----------------------------------------
+# STEP 7: Install Firewall
+# ----------------------------------------
+install_package_if_missiing "firewalld"
+sudo systemctl enable firewalld
+sudo systemctl start firewalld
+
+# ----------------------------------------
+# STEP 8: Configure firewall for HTTP/HTTPS
+# ----------------------------------------
+sudo firewall-cmd --permanent --add-service=http
+sudo firewall-cmd --permanent --add-service=https
+sudo firewall-cmd --reload
 
 # ----------------------------------------
 # FINISHED
