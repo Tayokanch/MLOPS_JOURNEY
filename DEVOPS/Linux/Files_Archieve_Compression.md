@@ -8,7 +8,7 @@
   
  - <**tar -xzvf screenshot.tar.gz**>: To `Extract` and `Decompress` files
 
-
+/home/tayo/Repos/MLOPS_JOURNEY/DEVOPS/Shell_Script/Debian_reactapp.sh
 
   
 **Compressing Files**

@@ -29,6 +29,8 @@
 
 - <**su - user_name**>: To switch to the new user
 - <**sudo usermod -aG wheel user_name**>
+- `sudo -i`: To switch to root user
+-`usermod -aG sudo username` : This is to give a user a sudo privilege
 
 - passwd user_name : This command is used to set password for a user by an administrator
   
