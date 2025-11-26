@@ -52,3 +52,14 @@
 
 1. `Dev Tayo` and `Dev Elizabeth` are working on the same  project but on their respective branches. They both made a changes on a particular file. `Dev Tayo` merged his branch with the master. When `Dev Elizabeth` was done, she also attemped to merge her branch with the Master branch and this cause a comflict because Git wont know the version of the file to keep. Hence a comflict occur.
 
+
+# GIT REBASE
+- IN Rebasing we are basically putting one branch on another one 
+- E.g I am in `Tayo's branch` and I'm not up to date `master branch` , I can run `git rebase master` to get all the new update that has been made on the master branch.
+
+- Rebasing also allows us to modify the Git history on a certain branch before rebrasing it.
+
+
+# Resetting and Reverting
+
+- `git revert *commit hash key*`: This is used to revert a commit
