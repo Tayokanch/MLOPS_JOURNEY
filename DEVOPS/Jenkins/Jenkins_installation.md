@@ -24,7 +24,7 @@
 https://www.jenkins.io/doc/book/installing/linux/#debianubuntu
 
 # Where Jenkins Service is Located
-sudo vi /lib/systemd/system/jenkins.service
+sudo vi `/lib/systemd/system/jenkins.service`
 
 - sudo systemctl enable jenkins 
 - sudo systemctl start jenkins 
