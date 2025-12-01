@@ -37,6 +37,7 @@ pipeline{
 - //STACH/UNSTACH = stach{} / unstach{}
 - //PARALLEL STAGES = parallel{}
 - //tools{}
+
 pipeline{
     environment{
         VAR1 = 'foo'

@@ -1,0 +1,2 @@
+# Parameterized Pipelines
+- Parameterized build allows you to  create flexible and customizable build jobs by defining parameters that can be passed when triggerring a build. These parameters can be used to make your builds more dynamic and versatile.

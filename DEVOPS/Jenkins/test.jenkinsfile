@@ -4,6 +4,29 @@
 //Run tests based on the RUN_TESTS parameter.
 // Build or package the project.
 
+
+
+
+pipeline{
+    stages{
+        stage(){
+            steps{
+
+            }
+        }
+        stage(){
+            steps{
+                
+            }
+        }
+        stage(){
+            steps{
+                
+            }
+        }
+    }
+}
+
 pipeline {
 agent any
 
