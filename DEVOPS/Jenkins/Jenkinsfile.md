@@ -27,16 +27,7 @@ pipeline{
 }
 
 
-// JENKINS DIRECTIVES / COMPONENTS
 
-- //EVIRONMENT VARIABLE = environment {}
-- //WHEN = when {}
-- //CREDENTIALS = credentials{}
-- //INPUT = input {}
-- //PARAMETERS = parameters {}
-- //STACH/UNSTACH = stach{} / unstach{}
-- //PARALLEL STAGES = parallel{}
-- //tools{}
 
 pipeline{
     environment{

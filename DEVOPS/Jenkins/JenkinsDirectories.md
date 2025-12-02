@@ -1,3 +1,5 @@
+# JENKINS DIRECTORIES
+
 - `/var/lib/jenkins/workspace/` : This is where all the jenkins `Jobs Directory` are created
   
 - `ll` : This is used to list all the `jobs` inside the `/workspace/`
