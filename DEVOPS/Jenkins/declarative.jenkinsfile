@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('checkout codebase') {
+            steps {
+              git branch: 'main', url: 'http://git-server:3000/max/node-app.git'
+            }
+        }
+        stage('Installing Dependencies') {
+            steps {
+                sh "npm install"
+            }
+        }
+        stage('Launch application') {
+            steps {
+                sh "node app.js"
+            }
+        }
+    }
+}

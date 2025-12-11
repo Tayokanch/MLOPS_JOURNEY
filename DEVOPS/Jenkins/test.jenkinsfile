@@ -1,0 +1,128 @@
+
+//Checkout the specified branch.
+//Install dependencies.
+//Run tests based on the RUN_TESTS parameter.
+// Build or package the project.
+
+
+
+
+pipeline{
+    stages{
+        stage(){
+            steps{
+
+            }
+        }
+        stage(){
+            steps{
+                
+            }
+        }
+        stage(){
+            steps{
+                
+            }
+        }
+    }
+}
+
+pipeline {
+agent any
+
+```
+environment {
+    REPO_URL     = "http://git-server:3000/max/python-app.git"
+    REPO_DIR     = "${WORKSPACE}/python-app"  //This is where our project saved after being cloned with the URL specific on the Pipeline Dashboard
+    
+    BRANCH_NAME  = "main"
+    RUN_TESTS    = "true"
+    PYTHON_VERSION = "python3"
+}
+
+stages {
+
+    stage('Checkout Code') {
+        steps {
+            script {
+                echo "Checking out branch: ${BRANCH_NAME} from ${REPO_URL}"
+                sh '''
+                    if [ -d "${REPO_DIR}" ]; then
+                        echo "Directory exists. Pulling latest changes..."
+                        cd "${REPO_DIR}"
+                        git reset --hard
+                        git checkout "${BRANCH_NAME}"
+                        git pull origin "${BRANCH_NAME}"
+                    else
+                        echo "Directory does not exist. Cloning repository..."
+                        git clone --branch "${BRANCH_NAME}" "${REPO_URL}" "${REPO_DIR}"
+                    fi
+                '''
+            }
+        }
+    }
+
+    stage('Install Dependencies') {
+        steps {
+            script {
+                echo "Installing dependencies..."
+                dir("${REPO_DIR}") {
+                    sh '''
+                        set -e
+                        ${PYTHON_VERSION} -m venv venv
+                        . venv/bin/activate
+                        pip install --upgrade pip
+                        pip install -r requirements.txt
+                    '''
+                }
+            }
+        }
+    }
+
+
+    stage('Run Tests') {
+        when {
+            expression { return env.RUN_TESTS == "true" }
+        }
+        steps {
+            script {
+                echo "Running tests..."
+                dir("${REPO_DIR}") {
+                    sh '''
+                        set -e
+                        . venv/bin/activate
+                        pytest --junitxml=reports/test-results.xml
+                    '''
+                }
+            }
+        }
+    }
+
+    stage('Run Application') {
+        steps {
+            script {
+                echo "Starting Flask app for 60 seconds..."
+                dir("${REPO_DIR}") {
+                    sh '''
+                        set -e
+                        . venv/bin/activate
+                        echo "Running Flask app with 60-second timeout..."
+                        timeout 60s python app.py || echo "App terminated after timeout (safe)"
+                    '''
+                }
+            }
+        }
+    }
+}
+
+post {
+    success {
+        echo "Pipeline executed successfully!"
+    }
+    failure {
+        echo "Pipeline failed!"
+    }
+}
+```
+
+}
