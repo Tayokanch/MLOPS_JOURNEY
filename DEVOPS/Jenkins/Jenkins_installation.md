@@ -16,10 +16,10 @@
 - paste the "key string" from the journalctl logs
 
 
-# Jenkins Directory
-- `/var/lib/jenkins`
+# Jenkins Serice on Ubuntu
+- `usr/lib/systemd/system/ `
 
-
+# Jenkins File systems on Ubuntu 
 # Jenkins link for Ubuntu
 https://www.jenkins.io/doc/book/installing/linux/#debianubuntu
 
