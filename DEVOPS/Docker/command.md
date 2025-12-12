@@ -15,6 +15,9 @@
 - `docker logs containerName or ContainerID`: To check all the logs of a container
 - ` docker run -d --name webapp nginx:1.14-alpine` : Running a container with ngix Image with a prevered containerName
 
+- `docker run -d  --name blue-app -p 38282:8080 kodekloud/simple-webapp:blue`
+
+
 # TAG
 - `docker run imageName:version`: This version is called tag
 
