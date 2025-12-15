@@ -1,0 +1,130 @@
+# Yaml Syntax
+
+# KEY_VALUE PAIRS in yml 
+
+app: user-authentication
+port: 9000
+version: 1.7
+
+# OBJECT IN YML
+microservice:
+  app: user-authentication
+  port: 9000
+  version: 1.7
+
+# IN JSON
+  "microservice": {
+    "app": "user-authentication",
+    "port": 9000,
+    "version": 1.7
+  }
+
+# LIST IN YML
+microservice:
+  - app: user-authentication
+    port: 9000
+    version: 1.7
+    depolyed: true
+
+# LIST IN JSON
+{
+  "microservice": [
+    {
+      "app": "user-authentication",
+      "port": 9000,
+      "version": 1.7,
+      "depolyed": true
+    }
+  ]
+}
+
+
+
+# LIST OF OBJECT IN YML
+microservice:
+  - app: user-authentication
+    port: 9000
+    version: 1.7
+    depolyed: true
+  - app: shopping-cart
+    port: 9002
+    version: 1.3
+    depolyed: yes
+
+#LIST OF OBJECT IN YML
+{
+  "microservice":[
+    {
+      "app": "user-authentication",
+      "port": 9000,
+      "version": 1.7,
+      "depolyed": true
+    },
+    {
+      "app": "user-authentication",
+      "port": 9000,
+      "version": 1.7,
+      "depolyed": false
+    }
+  ]
+}
+
+# LIST INSIDE LIST OF OBJECT IN YML
+
+microservice:
+  - app: user-authentication
+    port: 9000
+    version: 
+      - 2.5
+      - 2.6
+    depolyed: true
+  - app: shopping-cart
+    port: 9002
+    version: [1.9, 2.1, 2.2, "deploy", development]
+    depolyed: yes
+
+
+# LIST INSIDE LIST OF OBJECT IN JSON
+
+{
+  "microservice": [
+    {
+      "app": "user-authentication",
+      "port": 9000,
+      "version": [2.5, 2.6],
+      "depolyed": true
+    },
+    {
+      "app": "shopping-cart",
+      "port": 9002,
+      "version": [1.9, 2.1, 2.2, "deploy", "development"],
+      "depolyed": true
+    }
+  ]
+}
+
+
+microservices:
+  - user-authentication
+  - shopping-cart
+
+{
+  "microservices": [
+    "user-authentication",
+    "shopping-cart"
+  ]
+}
+
+# MULTILINE STRING IN YML
+mulitilineString: |
+  This is a multiline string 
+  and this is the next line 
+  of the string
+
+
+#ENVIRONMENTAL VARIABLE
+# This is represenyed by ($)
+comand: 
+  - /bin/sh
+  - >-
+    mysql -h 127.0.0.1 -u root -p $MYSQL_ROOT_PASSWORD -e 'SELECT 1'

@@ -72,4 +72,4 @@
 
 7. EXPOSE 5000
 
-8. CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app:app"] **For flask based application
+8. CMD ["gunicorn", "--bind", "0.0.0.0:5000" "app:app"] **For flask based application
