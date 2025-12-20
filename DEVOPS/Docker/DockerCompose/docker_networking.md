@@ -10,13 +10,25 @@
 # USER-DEFINED NETWORKS
 
 - How to create an isolated network for container
-- `docker network create --driver bridge --subnet 182.18.0.0/16 custom-isolated-network`: to create an isolated network
+- `sudo docker network create networkName`: This create a bridge adapter network automatically
+- `ip addr show`: To see the network that has just been created
+- `docker network ls`: To list the networks on docker
+- `docker network create --driver bridge --subnet 182.18.0.0/16 custom-isolated-network`: to create an isolated network with a network type and subnet type
 
 - `docker network ls`: To list all network
 
 # ASSIGNING CREATED NETWORK TO RUN A CONTAINER
 -  `docker run --network=custom-isolated-network -e DB_Host=mysql-db -e DB-Password=db_pass123 -d --name webapp -p 38080:8080 kodekloud/simple-webapp-mysql`
--  
+
+# 1️⃣ Private IP ranges 
+# These are the ranges you can safely use for Docker networks:
+
+| Range                         | CIDR           | Notes                                      |
+| ----------------------------- | -------------- | ------------------------------------------ |
+| 10.0.0.0 – 10.255.255.255     | 10.0.0.0/8     | 16+ million addresses, large networks      |
+| 172.16.0.0 – 172.31.255.255   | 172.16.0.0/12  | Commonly used for medium networks          |
+| 192.168.0.0 – 192.168.255.255 | 192.168.0.0/16 | Common for small networks and home routers |
+
 
 # HOW TO DEPLOY TO PRIVATE REGISTRY
 

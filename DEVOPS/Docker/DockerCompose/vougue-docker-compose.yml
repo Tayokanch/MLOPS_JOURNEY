@@ -1,0 +1,27 @@
+services:
+  db:
+    image: postgres:14
+    environment:
+      POSTGRES_USER: postgres_userName
+      POSTGRES_PASSWORD: postgres_passWord
+      POSTGRES_DB: vogueshopping
+    volumes:
+      - /opt/docker-data/vogueshoppingDB:/var/lib/postgresql/data #Make sure the folder exists and has permissions set for Postgres (UID 999)
+    ports:
+      - 5432:5432
+
+  vogueshoppingapi:
+    build: ./vogueshoppingapi
+    image: vogueshopping-api
+    depends_on:
+      - db
+    ports:
+      - 3001:3001
+
+  vogueshopping:
+    build: ./vogueshopping
+    image: vogueshopping-app
+    depends_on:
+      - vogueshoppingapi
+    ports:
+      - 8050:3000

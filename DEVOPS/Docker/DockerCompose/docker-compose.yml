@@ -1,11 +1,16 @@
 # Docker Compose
 
-# Docker Compose is a better way of setting up a complex application running mutilple services. 
+# Docker Compose is a tool used in  setting up complex application running mutilple services. 
+# for every service needed for an application to be up an running, there would be a lot of commands to be run 
+# which could be prone to error, typo  and inconsistency. with Docker compose, the setup for all the services to be run are written in one file (Yaml)
+# In this yaml file we outline which Images should we build from, the port, the volume , and how which container should talk to one another. 
+# Configuration for this services are defined in a compose.yaml file
 
 # How to link a container depending on another container together
 # - docker run -d --name=vogueapi -p 3100:3100 --link redis:redis vote-app
 # docker run -d --name=clickcounter --link redis:redis -p 8085:5000 kodekloud/click-counter
 # run -v /opt/data:/var/lib/mysql -d --name mysql-db -e MYSQL_ROOT_PASSWORD=db_pass123 mys
+
 version: 2
 services:
   redis:
@@ -22,7 +27,7 @@ services:
     build: ./vote #For Build option if the image is not on DOCKER HUB
     ports:
       - 5000:80
-    links:
+    links: #Allows conatiner to have access to their self
       - redis
     depends_on: #This is use show which service to start before one , if they depend on one another
       - db
