@@ -58,5 +58,4 @@ services:
      - 8085:5000
 
 ## VOTING APP PROJECT
- ## https://github.com/dockersamples/example-voting-app
-  
+## https://github.com/dockersamples/example-voting-app
