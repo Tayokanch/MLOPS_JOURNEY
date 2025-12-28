@@ -1,0 +1,22 @@
+FROM node:lts-alpine          
+# Use the official Node.js LTS image based on lightweight Alpine Linux
+
+WORKDIR /app                  
+# Set the working directory inside the container to /app. Any subsequent commands (COPY, RUN, CMD, etc.) will run relative to /app.
+
+COPY package*.json .          
+# Copy package.json and package-lock.json into the container
+
+RUN npm install               
+# Install Node.js dependencies defined in package.json
+
+COPY . .                      
+# Copy the rest of the application code into the container
+# The first . the local directory for the application.
+# The second . the working directory inside the container (/app).
+
+EXPOSE 3100                   
+# Expose application port
+
+CMD ["npm", "start"]          
+# To Define the default command to run when the container starts
