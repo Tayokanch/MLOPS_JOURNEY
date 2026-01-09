@@ -14,6 +14,41 @@
   - THis is who is responsible for **managing cluster**, responsible for storing the information about members of the cluster, how nodes are monitored, when a node fails, it is responsible for moving it workeload to another worker node
   - The master watches over the nodes in the cluster and is responsible for the actual orchestration of containers on the worker nodes
 
+- `Pods`: K8s doesn't deploy containers on the **Worker Nodes**. The containers are encapsulated into a Kubernetes objet known as `Pod`. A Pod is a single instance of an application and alo the smallest object that can be created in K8s.
+    - When user traffic increased in an application, and we need to scale the application to share the loads. How do we spin up an additional instances.
+    1. We wont bring up new containers withing the same `pod`, but We will create a new pod altogther with a new container instance of the same application.
+
+    2. If the users traffice further increases and the our current `nodes` has no sufficient capacity. We will the deploy an additional `pods` one a new `nodes` to the cluster
+
+    3. In general Pods has a one-one relationship with containers running your application To scale up, you create new pods and to scale down you delete the existin pods. 
+
+    4. **Note**: we do not add an additional container to an existing pods to scale an application. However, we are not restricted in having more than one container in a Pod.
+
+- `Multi-Container Pod`: A single Pod can have multiple containers, but must not be multiple containers of the same kind e.g a Pod can conatiner [nodejs_application, mongodb, Redis] at the same time but we can't have a replica of a conainer on the same Pod expect if its an `Helper Container`
+  - Containers on the same Pods can communicate with each other directly by reffering to each other as `localhost`, since they share the same `Network Space`, they are always been created together with an main container and destroy together.
+
+
+# How to create PODs
+- `kubectl run nginx --image=nginx`: This command create a pod automatically and deploy an instance of nginx docker image on it. This command `--image=nginx` tells kubectl where to get the image from, in this case (Dockerhub)
+
+- `kubectl get pods`: This helps us see the list of pods in our cluster
+
+- `kubectl get pods -o wide`: This provide addition information about each pods we have e.g IP, Node, AGE etc.
+
+- `kubectl describe pod podName`: This helps use to get more information about a particular pod.
+
+
+
+
+
+
+
+
+
+
+
+# Component of Kubernetes
+
 - `Components`:
   - When installing Kubernetes on a systen, the following components comes with it. `API server`, `etcd service`, `kubelet service`, `Container Runtime`, `Controller`, and a `scheduler`.
   
@@ -28,6 +63,9 @@
     - `Container Runtime`: The container runtime is the underlying software that is used to run containers. In our case, it happens to be `Docker`
   
     - `Kubelet`: This is the agent that runs on each nodes in the cluster. The agent is responsible for making sure that the containers are running on the nodes as expected. 
+
+
+
 
 
 # Difference between MASTER and WORKER NODES Servers
