@@ -1,0 +1,63 @@
+apiVersion: apps/v1
+# API version that supports the ReplicaSet resource
+
+kind: ReplicaSet
+# The type of Kubernetes object being created
+
+metadata:
+  name: myapp-replicaset
+  # Unique name that identifies this ReplicaSet within the namespace
+
+  labels:
+    # Labels attached to the ReplicaSet object itself
+    # Used for grouping, querying, and selection by higher-level objects
+    app: myapp
+    # Identifies which application this ReplicaSet belongs to
+
+    type: frontend
+    # Identifies the role/component of this ReplicaSet within the application
+
+spec:
+  replicas: 3
+  # The desired number of Pods that should be running at all times
+
+  selector:
+    # Defines which Pods this ReplicaSet is responsible for managing
+    # The ReplicaSet will count and control Pods that match these labels
+    matchLabels:
+      app: myapp
+      # Ensures only Pods belonging to "myapp" are selected
+
+      type: frontend
+      # Further restricts selection to frontend Pods only
+
+  template:
+    # Pod template used by the ReplicaSet to create new Pods
+    # This does NOT define ownership — ownership is defined by the selector
+
+    metadata:
+      labels:
+        # Labels applied to Pods created from this template
+        # These labels MUST match the selector above
+        app: myapp
+        # Associates the Pod with the "myapp" application
+
+        type: frontend
+        # Marks the Pod as part of the frontend component
+
+    spec:
+      containers:
+      - name: nginx
+        # Name of the container inside the Pod
+
+        image: nginx
+        # Container image that will be pulled and run
+ 
+
+#NOTE
+# what is selector here?
+
+# This helps the replicaSet to identify what Pod falls under it.
+
+# Why do we need it if we have already provided the content of the Pod definition file itself in the template?
+# Its because ReplicaSet can also manage Pods that were not created as part of the ReplicaSet creation.
