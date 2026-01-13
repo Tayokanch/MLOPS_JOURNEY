@@ -1,9 +1,10 @@
 
 # COMMAND USED IN replicaSets
-
-- `kubectl get rs` : How to get the status of RelicaSets
+- kubect`l create -f filename.yaml` : How to create a **replicaset**
 - 
-- `kubectl get replicaset` : How to get the list of RelicaSets
+- `kubectl get rs` : How to get the status of **replicaset**
+  
+- `kubectl get replicaset` : How to get the list of **replicaset**
 
 - `kubectl describe replicaset  replicaset-Name` : HOW GET MORE INFORMATION ABOUT A REPLICASET
   
