@@ -1,6 +1,8 @@
 
 # COMMAND USED IN replicaSets
 
+- `kubectl get rs` : How to get the status of RelicaSets
+- 
 - `kubectl get replicaset` : How to get the list of RelicaSets
 
 - `kubectl describe replicaset  replicaset-Name` : HOW GET MORE INFORMATION ABOUT A REPLICASET
