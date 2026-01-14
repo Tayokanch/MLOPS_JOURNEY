@@ -1,5 +1,13 @@
+## ReplicaSet
+- This is the new technology used to replace `Replication Controller`. The **ReplicaSet is a new recommended way to set up replication
 
-# COMMAND USED IN replicaSets
+- A ReplicaSet ensures that a minimun number of replicas are available all the time. But what if there are more number of replicas that whats required.
+
+- ReplicaSet helps us run multiple instances of a `single pod` in the K8s cluster, thus providing high availability
+
+
+
+# COMMAND USED IN ReplicaSets
 - kubect`l create -f filename.yaml` : How to create a **replicaset**
 - 
 - `kubectl get rs` : How to get the status of **replicaset**

@@ -14,7 +14,3 @@
 - We need `Replication Controller` to create multiple Pods to share the Load accros them. E.g, In a scenario where we hgave a single Pod serving set of users. When the number of user increases, we would depoly addition pods to balance the loads accross the Pods. If the Demands further increases, and we were to run of out reasources on the first **Node**, we could deploy addition Pods accross the other Nodes in the cluster
 
 
-## ReplicaSet
-- This is the new technology used to replace `Replication Controller`. The **ReplicaSet is a new recommended way to set up replication
-
-- A ReplicaSet ensures that a minimun number of replicas are available all the time. But what if there are more number of replicas that whats required.
