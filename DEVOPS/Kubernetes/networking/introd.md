@@ -40,3 +40,12 @@
 - if we setup of this Network Technologies E.G `Calico` to our Nodes with the same Cluster, it will manage the networks and IPs in our Nodes and assign a different network address to the Pods on each Nodes.
 
 ![ Cluster Networking](./Cluster_networking.drawio%20(1).png)
+
+
+
+K8s networking starts from Pods which is the basic unit in k8s where our conternarized application are running. In k8s Netweorking start from the Pod level. each pods get its own IP address in the K8s Cluster
+
+- In a cluster all Pods can connect with each other on all nodes
+- containers on all pods can communicate with each other on local host with their ports
+
+- Service offers a consistent Ip address to access a Pod or a set of pods. with this other services wont the a specific IP address to connect to a Pods, the use the serviceIP
