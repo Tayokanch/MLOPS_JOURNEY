@@ -16,7 +16,7 @@
 ![ Single Node Networking](./1_Node_network.drawio%20(1).png)
 
 
-# Cluster Networking
+# Node Cluster Networking
 
 - when we have 2 separate Nodes, each of them would have a separete IP Address. The `Node 1` could be `192.168.1.2` and `Node 2` could be `192.168.1.3`. However Each Pod Inside them would have an `Internal IP` from the range of `10.244.0.0`.
 
@@ -43,9 +43,5 @@
 
 
 
-K8s networking starts from Pods which is the basic unit in k8s where our conternarized application are running. In k8s Netweorking start from the Pod level. each pods get its own IP address in the K8s Cluster
-
-- In a cluster all Pods can connect with each other on all nodes
-- containers on all pods can communicate with each other on local host with their ports
 
 - Service offers a consistent Ip address to access a Pod or a set of pods. with this other services wont the a specific IP address to connect to a Pods, the use the serviceIP

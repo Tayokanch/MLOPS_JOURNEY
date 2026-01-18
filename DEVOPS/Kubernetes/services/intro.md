@@ -1,9 +1,12 @@
 # K8s SERVICES
 
 - Kubernetes Services enables communication btw various components within and outside of the application. It also helps us to connect applications together with other applications or users. E.G
-- Our applications has a group of Pods running varipus section such as a group for severing `frontend`, another group for server `backend` and a group connecting to an external data source `pG database`.
-- It is services that neables connectivity btw theses groups Pods
-- Services enbales the Frontend-application to be made available to the end user, helps communication btw `backend and frontend Pods` and helps connectivity to an external data source 
+
+- Our applications has a group of Pods running various section such as a group for severs `frontend`, another group for server `backend` and a group connecting to an external data source `pG database`.
+
+- It is services that enables connectivity btw theses groups Pods
+
+- Service enables the Frontend-application to be made available to the end user, helps communication btw `backend and frontend Pods` and helps connectivity to an external data source 
 
 - K8s Service is also an **Object** just like Pods, ReplicaSets or Deployments.
 
