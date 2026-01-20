@@ -19,3 +19,4 @@ spec:
 
 # Using MINIKUBE for NODE
 # minikube service my-service-name --url : to get the IP address of the NODE and the PORT the service we just created is listening to
+

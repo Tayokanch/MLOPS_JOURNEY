@@ -42,7 +42,7 @@ Laptop → NodePort → Service → Pod
 
 - In a production environment we have multiple Pod instances of a web application running for high availabilty and load balancing purposes. All these POds would have same labels i.e sames key and value. This label is used as a selector during the creation of the service. So when the service is created, it looks for a matching Pods with the Labels specified in the Selector. The service automatically selects all the Pods with the Matching Labels as endpoints to forward the external requests coming from the user. Service acts as a built-in Load balancer to distribute loads across different pods using a `Random Algorithm`.
 
-# Notee
+# Note
 - No additional configuration required for the service with a multiple pods
 
 

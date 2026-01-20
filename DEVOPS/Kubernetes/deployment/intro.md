@@ -29,7 +29,7 @@
 
 - Containers are encapsulated in Pods
 - Multiple Pods are deployed using ReplicaSets
-- Then `Deployments` is a Kubernetes Object that comes with higher in the hierarchy. 
+- Then `Deployments` is a Kubernetes Object that comes higher in the hierarchy. 
   - The deployment provide us the capability to upgrade the underlying **Pod Instance** seamlessly using `Rolling Updates`, `Undo-Changes`, `Pause`, and `Resume Changes`
 
 

@@ -4,7 +4,6 @@ metadata:
   name: httpd-frontend
   labels:
     app: httpd-webserber
-    type: frontend
 spec:
   selector:
     matchLabels:

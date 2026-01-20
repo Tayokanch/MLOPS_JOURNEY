@@ -26,11 +26,3 @@ spec: ##Pod
 
 
 
-# Commands used in Deployments
-# kubectl create -f deployment-filename.yaml: To create the deployments
-# kubectl apply -f deployment-filename.yaml: This is to apply a changes to the deployment 
-# kubectl get deployments: To get all our deployments
-# kubectl get replicaset: To get the replicaSet that was created when we run/created the deployment
-# kubectl get pods: To get all the pods created by the ReplicaSet
-# kubectl get all: This is to see all the deployment object created at once
-# kubectl describe deployment deployment-name : This is to get a full information about a deployment

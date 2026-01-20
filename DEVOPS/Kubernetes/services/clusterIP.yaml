@@ -4,9 +4,9 @@ metadata:
   name: backend
 spec:
   type: ClusterIP
-  ports:
-    - port: 80
-      targetPort: 80
+  ports: 
+    - port: 80 #This is the port the service is exposed to
+      targetPort: 80 #This is the Port our application is exposed to
   selector: #Linking the ClusterIp to a sets of Pods with a same label below
     app: myapp
     type: backend
