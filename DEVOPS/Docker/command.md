@@ -17,10 +17,14 @@
 
 - `docker run -d  --name blue-app -p 38282:8080 kodekloud/simple-webapp:blue`
 
-
+# TO PUSH AN IMAGE TO DOCKERHUB
+- `docker login`: login to your dockerhub from our terminal
+- `docker tag imageName dockerhubUserName/imageName_IN_DockeHub`: To tag the image
+- `docker push dockerhubUserName/imageName_IN_DockeHub`: To push to Docker hub
+  
 # TAG
 - `docker run imageName:version`: This version is called tag
 
-# INPUT
-- `docker run -it imageName`: This let docker run in an interactive mode. 
+# INTERACTIVE
+- `docker run exec -it containerName/containerID sh`: To let Container run in an interactive node
 
