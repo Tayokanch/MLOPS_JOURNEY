@@ -6,3 +6,9 @@ https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-
 
 https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/do-more-with-tunnels/local-management/as-a-service/linux/
 
+
+# To Validate the Cofig file 
+- cloudflared tunnel ingress validate
+- `sudo systemctl restart cloudflared` : Restart the service
+-` sudo systemctl status cloudflared` : To check the status of the service
+

@@ -1,0 +1,8 @@
+# TO INSTALL INGRESS CONTROLLER USING MANIFEST
+- kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.9.1/deploy/static/provider/baremetal/deploy.yaml: By default the service comes with a NodePort, so we need to change the type to a loadBlancer
+
+
+- kubectl get pods -n ingress-nginx : To see the Ingress Controller pods
+
+
+- kubectl patch svc serviceName -n labelName -p '{"spec":{"type":"LoadBalancer"}}': To change our Ingress Controller to a Loadbalancer type
