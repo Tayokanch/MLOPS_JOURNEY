@@ -1,0 +1,50 @@
+- name: Install Nginx and required packages
+  hosts: all
+  become: yes
+
+  vars:
+    packages:
+      - name: mysql
+        required: true
+      - name: nodejs
+        required: true
+      - name: postgresql
+        required: true
+      - name: python
+        required: false
+
+  tasks:
+    - name: Install Nginx on Debian-based systems
+      apt:
+        name: nginx
+        state: present
+      when:
+        - ansible_os_family == "Debian"
+        - ansible_distribution_version == "16.04"
+
+    - name: Install Nginx on RedHat-based systems
+      yum:
+        name: nginx
+        state: present
+      when:
+        - ansible_os_family in ["RedHat", "SUSE"]
+
+    # Looping example (Debian)
+    - name: Install required packages on Debian
+      apt:
+        name: "{{ item.name }}"
+        state: present
+      loop: "{{ packages }}"
+      when:
+        - ansible_os_family == "Debian"
+        - item.required
+
+    # Looping example (RedHat)
+    - name: Install required packages on RedHat
+      yum:
+        name: "{{ item.name }}"
+        state: present
+      loop: "{{ packages }}"
+      when:
+        - ansible_os_family == "RedHat"
+        - item.required

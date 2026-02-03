@@ -1,0 +1,20 @@
+- name: Check httpd status and alert if down
+  hosts: webservers
+  become: yes
+
+  tasks:
+    - name: Check httpd service status
+      service_facts:
+
+    - name: Send email if httpd is down
+      mail:
+        to: admin@company.com
+        subject: "ALERT: httpd down on {{ inventory_hostname }}"
+        body: |
+          The httpd service is DOWN.
+
+          Host: {{ inventory_hostname }}
+          Time: {{ ansible_date_time.iso8601 }}
+      when:
+        - "'httpd.service' in ansible_facts.services"
+        - ansible_facts.services['httpd.service'].state != 'running'

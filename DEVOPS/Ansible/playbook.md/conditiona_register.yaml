@@ -1,0 +1,21 @@
+- name: Check httpd status and alert using register
+  hosts: webservers
+  become: yes
+
+  tasks:
+    - name: Check httpd service
+      command: systemctl httpd status
+      register: result
+      failed_when: false
+      changed_when: false
+
+    - name: Send email if httpd is down
+      mail:
+        to: admin@company.com
+        subject: "ALERT: httpd down on {{ inventory_hostname }}"
+        body: |
+          httpd service is DOWN.
+
+          Host: {{ inventory_hostname }}
+          Status: {{ result.stdout }}
+      when: result.stdout != "active"

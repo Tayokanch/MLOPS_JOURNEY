@@ -1,0 +1,31 @@
+- name: Create User, Install Packages and start them
+  hosts: web # Run this play only on all hosts that belong to the group web
+  become: yes
+  tasks:
+    - name: Create users on web servers
+      user:
+        name: "{{ item.username }}"
+        state: present
+      loop: "{{ users_details }}"
+
+    - name: Install nginx on web servers
+      package:
+        name: nginx
+        state: present
+
+    - name: Start and enable nginx
+      service:
+        name: nginx
+        state: started
+        enabled: yes
+
+
+- name: Create User to Database
+  hosts: db # Run this play only on all hosts that belong to the group db
+  become: yes
+  tasks:
+    - name: Create users on database server
+      user:
+        name: "{{ item.name }}"
+        state: present
+      loop: "{{ users_details }}"

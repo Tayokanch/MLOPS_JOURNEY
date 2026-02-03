@@ -37,3 +37,6 @@ inter_ip_range: 192.0.2.0
 # HOW TO REVERENCE VARIABLE IN PLAYBOOKS
 -`{{variable_name}}`, if written with another string / statement
 - `'{{variable_name}}'`, if written alone with no other string / statement
+
+
+user_details={'username': 'admin', 'password': 'secret_pass', 'email': 'admin@example.com'}
