@@ -1,0 +1,17 @@
+# Command Module
+
+- name: Play 1
+  hosts: localhost
+  tasks:
+    - name: Execute Command Database
+      command: date #Print the date
+
+    - name: Display resolv.conf
+      command: cat /etc/resolve.conf
+
+    - name: Display resolv.conf
+      command: cat /resolve.conf chdir=/etc #cd into /etc before running the commad
+
+    - name: Make Directory
+      command: mkdir /folder creates=/folder #This checks if the folder alredy exist before creating it
+  

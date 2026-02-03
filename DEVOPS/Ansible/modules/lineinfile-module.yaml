@@ -1,0 +1,15 @@
+#Line-in-file Module: This is used to find a line a file and replace it or add it if it doesnt alread exist
+
+- name: Run script
+  hosts: localhost
+  tasks:
+    - name: Add a local Hostname
+      lineinfile: 
+        path: /etc/hosts
+        line: "192.168.1.10 webserver1.local"
+
+    - name: Add a local Hostname
+      lineinfile: 
+        path: /etc/hosts
+        line: "192.168.1.11 voguenest@tayolab.dev"
+

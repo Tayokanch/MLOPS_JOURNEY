@@ -1,0 +1,7 @@
+# Script Module : This runs a local script on a remote node after transferring it
+
+- name: Run script
+  hosts: localhost
+  tasks:
+    - name: Run a script on remote server
+      script: /home/tayo/script.sh

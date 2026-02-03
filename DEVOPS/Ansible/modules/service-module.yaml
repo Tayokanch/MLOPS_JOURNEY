@@ -1,0 +1,14 @@
+
+#Service module is use for maintaining services on a system such as Staring, Stopping, or restarting a service
+
+- name: Start Services in Order
+  hosts: localhost
+  tasks:
+    - name: Start the Database service
+      service:
+        name: postgresql
+        state: started
+    - name: Start HTTPD service
+      service:
+        name: httpd
+        state: started
