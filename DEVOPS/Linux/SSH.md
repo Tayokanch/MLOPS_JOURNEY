@@ -21,7 +21,7 @@
 
 - 1. **<ssh-keygen -t rsa -b 2048 -f /home/.ssh/my_key_name>** : To create a key pair on the client
 
-  - OR **ssh-keygen -t ed25519 -f /home/tayo/.ssh/vmkey -C "ubuntuVM@gmail.com"**
+- OR **ssh-keygen -t ed25519 -f /home/tayo/.ssh/vmkey -C "ubuntuVM@gmail.com"**: This Ed25519 keys (faster, shorter, highly secure):
 
 - 2. - <**ssh-copy-id -i  ~/.ssh/my_key_name.pub user_name@remote_server_name**> : Copy the public key to the remote server to configure a passwordless SSH connection between the client and host. Note: This automatically creates `.ssh/authorized_keys` file where the public key would be saved on the remote server 
   

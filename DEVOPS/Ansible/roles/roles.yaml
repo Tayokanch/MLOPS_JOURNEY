@@ -1,0 +1,26 @@
+
+# Normal Playbook
+- name: Install and Configure MSQL
+  hosts: db-server
+  tasks:
+    - name: Install Pre-Requisites
+      yum: name=pre-req-packages state=present
+    
+    - name: Install MySQL pre-req-packages
+      yum: name=mysql state=present
+    
+    - name: Start Mysql service
+      service: name=mysql state=stated
+    
+    - name: Configure Database
+      mysql_db: name-db1 state=present
+
+
+
+
+# Instead we do this for ROLE
+
+- name: Install and Configure MSQL
+  hosts: db-server
+  roles:
+    - mysql #name of the roles that contains the list of tasks
