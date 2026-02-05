@@ -1,0 +1,13 @@
+# Collection for Aws service
+
+
+- name: Creating database with AWS Collection
+  hosts: localhost
+  Collections: 
+    - amazon.aws
+
+  tasks:
+    - name: create an S3 bucket
+      aws_s3_bucket: 
+        name: my-bucket
+        region: us-west-1
