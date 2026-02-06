@@ -69,30 +69,48 @@ ansible-galaxy init mysql
 
 ```
 # Standard Ansible Role File Structure
-roles/
-└── mysql/
-    ├── tasks/
-    │   └── main.yml
-    │
-    ├── handlers/
-    │   └── main.yml
-    │
-    ├── defaults/
-    │   └── main.yml
-    │
-    ├── vars/
-    │   └── main.yml
-    │
-    ├── templates/
-    │   └── my.cnf.j2
-    │
-    ├── files/
-    │   └── my.cnf
-    │
-    ├── meta/
-    │   └── main.yml
-    │
-    └── README.md
+ansible-project/
+│
+├── inventory/
+│     └── production.ini
+│
+├── playbooks/
+│     └── site.yml
+│
+├── roles/
+│     ├── nginx/
+│     │     ├── tasks/
+│     │     │     └── main.yml
+│     │     │
+│     │     ├── handlers/
+│     │     │     └── main.yml
+│     │     │
+│     │     ├── templates/
+│     │     │
+│     │     ├── files/
+│     │     │
+│     │     ├── vars/
+│     │     │     └── main.yml
+│     │     │
+│     │     ├── defaults/
+│     │     │     └── main.yml
+│     │     │
+│     │     ├── meta/
+│     │     │     └── main.yml
+│     │     │
+│     │     └── README.md
+│     │
+│     ├── postgres/
+│     │
+│     └── common/
+│
+├── group_vars/
+│
+├── host_vars/
+│
+└── ansible.cfg
+
+
 
 
 ## How to Use Roles in a Playbook
@@ -104,22 +122,29 @@ The most common and recommended approach is to store roles inside a `roles/` dir
 ### Project Structure Example
 
 ```text
-playbook-folder/
-├── playbook.yml
-└── roles/
-    └── mysql/
-        ├── tasks/
-        │   └── main.yml
-        ├── handlers/
-        │   └── main.yml
-        ├── defaults/
-        │   └── main.yml
-        ├── vars/
-        │   └── main.yml
-        ├── templates/
-        ├── files/
-        └── meta/
-            └── main.yml
+ansible-projects/
+│
+├─ inventory/
+│   ├─ hosts.ini           # all nodes grouped
+│   └─ group_vars/
+│       ├─ all.yml
+│       ├─ webservers.yml
+│       └─ dbservers.yml
+│
+├─ playbooks/
+│   ├─ bootstrap_ssh.yaml
+│   ├─ webservers.yaml
+│   └─ dbservers.yaml
+│
+├─ roles/
+│   ├─ webserver/
+│   │   ├─ tasks/
+│   │   └─ templates/
+│   └─ dbserver/
+│       ├─ tasks/
+│       └─ templates/
+└─ README.md
+
 ```
 ### Using a Role Inside a Playbook
 
