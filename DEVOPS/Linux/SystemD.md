@@ -1,9 +1,9 @@
-*INTRODUCTION TO SYSTEMD*
+# INTRODUCTION TO SYSTEMD*
 
-*HOW TO CREATE AND MANAGE SERVICES WITH Systemd*
+- HOW TO CREATE AND MANAGE SERVICES WITH Systemd*
 
-**TO CONFIGURE A SERVICE**
-1. Inside the <**/etc/systemd/system**> create a UNIT SERVICE FILE which you want your service to be known as e.g (my_app.service)
+### TO CONFIGURE A SERVICE**
+1. Inside the `/etc/systemd/system` create a UNIT SERVICE FILE which you want your service to be known as e.g (my_app.service)
    
 2. Open the Unit Service file <**sudo vim /etc/systemd/system/my_app.service**>
   
@@ -36,10 +36,14 @@
     -  <**Description = description_of_the_project**>
     -  <**Documentation = http://myproject.com**>
 
-- <**sudo systemctl start project_name.service**> : Run the command to start the service
+# Commands
+
+- `sudo systemctl start project_name.service` : Run the command to start the service
   
-- <**systemctl status project_name.service**> : This is to check the status of the service
+- `systemctl status project_name.service` : This is to check the status of the service
   
-- <**systemctl stop project_name.service**> : This is to stop the service
+- `systemctl stop project_name.service` : This is to stop the service
+
+- `systemctl list-units --type=service`: This is to list all the systemd services running on the system
 
 
