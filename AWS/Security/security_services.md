@@ -1,4 +1,4 @@
-# AWS SECURITY RESOURCES / SERVICES
+# AWS SECURITY SERVICES
 
 ## Prevention Service
 
@@ -31,7 +31,7 @@
 ## AWS GuardDuty Service
 
 `GuardDuty Service`: 
-- This is a security service that identifies threats by continuously monitoring the activition our `AWS Infrastcutre`. 
+- This is a security service that identifies threats by continuously monitoring the activities our `AWS Infrastcutre`. 
   
 - Its a very intelligent service that utilizes machine  to detect our usual patterns and behaviors of our AWS account and if it ever detect any unusual patterns or abnormal, it will then notify us of what its able to find
 
@@ -43,3 +43,23 @@
  - It takes all these findings and logs listed above and use machine learning to create advanced visualization and interactive Dashbaord to make it easier to troubleshoot the root cause any issues.
 
 ## AWS CONFIG
+
+`AWS Config`: This tracks and audit the configuration of an AWS resource .i.e any configuration changes we make to any resources with AWS will be logged in the `AWS Config`.
+
+
+## AWS SECURITY HUB
+
+`AWS security Hub`: Takes findings from **Amazon Inspector** and **Amazon GuardDuty** and a few other locations. And going to centralize all of the security alerts so that we can see it in a sinle pabe of glass instead of having to go into two different services
+
+
+## CloudTrail
+
+`CloudTrail`: This tracks users activity with an AWS account. Anytime a user perfoms actions within AWS, an event is logged in Cloudtrail
+
+## Amazon Security Late
+
+`Amazon Security Late`: This service collect security logs and events from multiple different sources and aggregate those logs in a central location
+
+## AWS Macie
+
+`AWS Macie`: This service uses pattern matching and machine learning to automatically discover sensitive Data. Example, `Macie` can generate an invemtory report of **S3 buckets** and scan objects for senstive Data
