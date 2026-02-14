@@ -23,7 +23,7 @@
 
 - `AWS Secrets Manager`: This Service is used for storing and Managing all the our Secret / Credentials needed for our application to run. This is basically the production grade of our **.env file**
   
-  -  With *AWS Secrets Manager* our application can dynamically pull the secrets from the Secrets Manager
+  -  With *AWS Secrets Manager* our application can dynamically pull the *secrets* from the Secrets Manager
   -  With *AWS Secrets Manager*, we can configure an automatic rotation schedule for pur **secrets** because Long-term secrets are more vulnerable to being compromised.
 
 
