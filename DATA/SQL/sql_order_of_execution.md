@@ -1,0 +1,11 @@
+## ORDER OF EXECUTION
+
+# THIS IS HOW SQL PROCESS ITS EXECUTION
+
+- `STEP 1`: `FROM`
+- `STEP 2`: `WHERE`
+- `STEP 3`: `SELECT (Alias is added where)` 
+- `STEP 4`: `LIMIT`
+
+WHERE
+FROM

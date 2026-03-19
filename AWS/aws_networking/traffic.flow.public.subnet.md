@@ -52,3 +52,61 @@ EC2 Instance (API on port 3033)
 EC2 Security Group
 Inbound
 TCP 3033 from ALB Security Group
+
+
+
+- VPC
+- IGW
+- 2 public subnets
+- 2 private subnets
+- Nat gateway
+- 1 public subnet route table, routed to IGW and associated to public subnets
+- 1 private subnet route table,  routed to NAT and associated to private subnets
+- 2 ec2 instance in each private subnets
+- SG for ec2
+- EC2 Security Group
+   Inbound
+   TCP 3033
+   Source: ALB Security Group
+   Outbound
+   All traffic (default)
+
+- Create ALB
+- ALB Security Group
+
+   Inbound
+
+   HTTP 80
+   Source: 0.0.0.0/0
+
+   Outbound
+   TCP 3033
+   Destination: EC2 Security Group
+
+- Created Target Group for the 2 EC2 instances
+- Added This target group as the target group for our ALB
+
+----
+USer Data
+#!/bin/bash
+
+# Update packages
+apt-get update -y
+apt-get upgrade -y
+
+# Install Docker
+apt-get install -y docker.io
+
+# Start and enable Docker
+systemctl start docker
+systemctl enable docker
+
+# Pull your Docker image
+docker pull tayokanch/weather-forecast-api-v1
+
+# Run the container
+docker run -d \
+  -p 3033:3033 \
+  -e API_KEY=your_real_api_key_here \
+  --name weather-api \
+  tayokanch/weather-forecast-api-v1
